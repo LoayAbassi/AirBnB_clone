@@ -18,3 +18,5 @@ __init__.py will contain all the from dir.fn import obj
 then when we type import dir in any module it will be easier to use them
 in multiple files 
 
+NB : JSON files for data storage
+
