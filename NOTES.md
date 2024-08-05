@@ -20,3 +20,11 @@ in multiple files
 
 NB : JSON files for data storage
 
+# args vs kwargs
+
+function(A,B,C)
+
+A: 1st positional argument example 5
+B: (args)rest of normal arguments example(4,8,9,19)
+C: (kwargs) after args tuple format , example (a=5,8=7,x=9)
+
