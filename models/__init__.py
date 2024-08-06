@@ -1,7 +1,5 @@
-from .place import Place
-from .city import City
-from .review import Review
-from .amenity import Amenity
-from .user import User
-from .state import State
-from .base_model import BaseModel
+#!/usr/bin/python3
+"""Initializes the package"""
+from models.engine.file_storage import FileStorage
+storage = FileStorage()
+storage.reload()
