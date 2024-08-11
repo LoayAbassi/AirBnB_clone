@@ -24,7 +24,7 @@ class BaseModel:
     def save(self):
         """updates the updated_at attribute to the current datetime"""
         self.updated_at = datetime.now()
-        models.storage.save()
+        models.storage.save(self)
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
@@ -33,3 +33,5 @@ class BaseModel:
         dict_rep["created_at"] = self.created_at.isoformat()
         dict_rep["updated_at"] = self.updated_at.isoformat()
         return dict_rep
+    
+
