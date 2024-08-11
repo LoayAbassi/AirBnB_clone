@@ -13,9 +13,14 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """this is the constructor method."""
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        if len(kwargs) == 0:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
+            return
+        
+        
+        
 
     def __str__(self):
         """this is the string representation of the class"""
@@ -24,7 +29,6 @@ class BaseModel:
     def save(self):
         """updates the updated_at attribute to the current datetime"""
         self.updated_at = datetime.now()
-        models.storage.save(self)
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
