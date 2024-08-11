@@ -5,7 +5,6 @@ will inherit from
 """
 from uuid import uuid4
 from datetime import datetime
-import models
 
 
 class BaseModel:
@@ -19,6 +18,15 @@ class BaseModel:
             self.updated_at = self.created_at
             return
         
+        for element in kwargs:
+            if element =="__class__":
+                continue
+            setattr(self, element, kwargs[element])
+
+
+        
+        
+
         
         
 
