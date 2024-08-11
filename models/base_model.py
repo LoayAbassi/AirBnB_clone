@@ -13,9 +13,13 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """this is the constructor method."""
+        if len(kwargs)>0:
+
+            return
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = self.created_at
+        models.storage.new(self)
 
     def __str__(self):
         """this is the string representation of the class"""
