@@ -23,13 +23,6 @@ class BaseModel:
                 continue
             setattr(self, element, kwargs[element])
 
-
-        
-        
-
-        
-        
-
     def __str__(self):
         """this is the string representation of the class"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
