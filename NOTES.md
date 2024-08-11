@@ -33,6 +33,7 @@ C: (kwargs) after args tuple format , example (a=5,8=7,x=9)
 # uuid
 
 uuid4() ==> generates unique id // needs to be converted with str()
+uuidN (n in [1..5])// depends on pûrpose of project 
 
 # datetime 
 
