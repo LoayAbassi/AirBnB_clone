@@ -12,13 +12,19 @@ class FileStorage:
 
     def new(self,obj):
         """adds new objects to dict of objs"""
-        key = f"{obj.__class__.__name__}.{obj.id}"
+        key = f"{obj.__class__.__name__}.{obj['id']}"
         self.__objects[key] = obj
 
     def save(self):
-        """serializes the __objects to json file"""
-        with open(self.__file_path,"w") as f:
-            json.dump(self.__objects,f)
+        """Save/serialize obj dictionaries to json file"""
+        obj_dict = {}
+
+        for key, obj in self.__objects.items():
+            obj_dict[key] = obj
+        with open(self.__file_path, 'w', encoding="UTF-8") as f:
+            json.dump(obj_dict, f)
+
+
 
     def reload(self):
         """deserializes the json file to __objects"""
@@ -26,9 +32,7 @@ class FileStorage:
             with open(self.__file_path,"r") as f:
                 data = json.load(f)
                 for key,value in data.items():
-                    
-                    
-                
-
+                    self.__objects[key] = value
         except FileNotFoundError:
             pass
+

@@ -5,6 +5,7 @@ will inherit from
 """
 from uuid import uuid4
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -30,6 +31,8 @@ class BaseModel:
     def save(self):
         """updates the updated_at attribute to the current datetime"""
         self.updated_at = datetime.now()
+        models.storage.new(self.to_dict())
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
