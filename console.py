@@ -12,7 +12,11 @@ class HBNBCommand(cmd.Cmd):
         """EOF command to exit the program"""
         return True
     
-    
+    def emptyline(self):
+        """does nothing when uuser puts empty line"""
+        pass
+        
+
 
 
 if __name__ == '__main__':
