@@ -12,7 +12,7 @@ class FileStorage:
 
     def new(self,obj):
         """adds new objects to dict of objs"""
-        key = f"{obj.__class__.__name__}.{obj['id']}"
+        key = f"{obj['__class__']}.{obj['id']}"
         self.__objects[key] = obj
 
     def save(self):
